@@ -1,6 +1,7 @@
 # dynamic_proxy
-动态代理的两种方式
-
-  jdk自带的动态代理
+动态代理的两种方式：
+  <ul>
+  <li>jdk自带的动态代理</li>
   
-  cglib包动态代理
+  <li>cglib包动态代理</li>
+  </ul>
