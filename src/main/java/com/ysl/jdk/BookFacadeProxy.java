@@ -26,10 +26,10 @@ public class BookFacadeProxy implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args)
             throws Throwable {
         Object result=null;
-        System.out.println("事物开始");
+        System.out.println("事务开始");
         //执行方法
         result=method.invoke(target, args);
-        System.out.println("事物结束");
+        System.out.println("事务结束");
         return result;
     }
 }
