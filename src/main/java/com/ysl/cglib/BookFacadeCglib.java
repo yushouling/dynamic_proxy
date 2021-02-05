@@ -7,13 +7,13 @@ import net.sf.cglib.proxy.MethodProxy;
 import java.lang.reflect.Method;
 
 /**
- * 使用cglib动态代理  
+ * 使用cglib动态代理
  */
 public class BookFacadeCglib implements MethodInterceptor {
     private Object target;
 
     /**
-     * 创建代理对象 
+     * 创建代理对象
      *
      * @param target
      * @return
@@ -28,12 +28,15 @@ public class BookFacadeCglib implements MethodInterceptor {
         return enhancer.create();
     }
 
-    // 回调方法
+    /**
+     * 回调方法
+     */
+    @Override
     public Object intercept(Object obj, Method method, Object[] args,
                             MethodProxy proxy) throws Throwable {
-        System.out.println("事物开始");
+        System.out.println("事务开始");
         proxy.invokeSuper(obj, args);
-        System.out.println("事物结束");
+        System.out.println("事务结束");
         return null;
     }
 }
